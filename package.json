@@ -1,8 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "start": "umi dev",
-    "build": "umi build",
+    "start": "cross-env API_URL_PREFIX='http://100.100.101.137:3000' umi dev",
+    "start:mock": "cross-env API_URL_PREFIX='/api' umi dev",
+    "start:local": "cross-env API_URL_PREFIX='http://localhost:3000' umi dev",
+    "build": "cross-env API_URL_PREFIX='http://100.100.101.137:3000' umi build",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
@@ -20,14 +22,17 @@
     ]
   },
   "dependencies": {
+    "@ant-design/pro-form": "^1.28.0",
     "@ant-design/pro-layout": "^6.5.0",
     "@umijs/preset-react": "1.x",
+    "react-document-title": "^2.0.3",
     "umi": "^3.4.25"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@umijs/test": "^3.4.25",
+    "cross-env": "^7.0.3",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.0",
     "react": "17.x",

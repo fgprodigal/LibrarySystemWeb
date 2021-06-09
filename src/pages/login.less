@@ -1,0 +1,30 @@
+@import '~antd/lib/style/themes/default.less';
+
+.main {
+  height: 100vh;
+
+  @media screen and (min-width: @screen-lg) {
+    background-image: url('~@/assets/bg.svg');
+    background-repeat: no-repeat;
+    background-position: center 110px;
+    background-size: 100%;
+  }
+
+  .form {
+    padding-top: 100px;
+    width: 388px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center 110px;
+    background-size: 100%;
+    @media screen and (max-width: @screen-lg) {
+      width: 95%;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .main {
+    background-color: #141414;
+  }
+}
